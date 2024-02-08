@@ -1,9 +1,9 @@
 import os
+import random
 os.system('cls')
 
 def seleccion_sort(arr):
     n = len(arr)
-    print(f"Arreglo inicial: {arr}\n")
 
     for i in range(n - 1):
         indice_minimo = i
@@ -13,11 +13,13 @@ def seleccion_sort(arr):
                 indice_minimo = j
         if indice_minimo != i:
             arr[i], arr[indice_minimo] = arr[indice_minimo], arr[i]
-        print(f"Paso: {arr}")
+
     return arr
 
 # Ejemplo de uso:
-array_a_ordenar = [64, 25, 12, 22, 11]
+random.seed(42)
+array_a_ordenar = [random.randint(1, 1000) for _ in range(1000)]
+print(f"Arreglo original: {array_a_ordenar}\n")
 
 array_ordenado = seleccion_sort(array_a_ordenar)
 print(f"\nArreglo final: {array_ordenado}")

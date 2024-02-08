@@ -1,4 +1,5 @@
 import os
+import random
 os.system('cls')
 
 def quicksort(arr):
@@ -8,11 +9,12 @@ def quicksort(arr):
         pivote = arr[0]
         menores = [elemento for elemento in arr[1:] if elemento <= pivote]
         mayores = [elemento for elemento in arr[1:] if elemento > pivote]
-        print(f"Paso: {arr}")
+
         return quicksort(menores) + [pivote] + quicksort(mayores)
 
 # Ejemplo de uso:
-array_a_ordenar = [64, 25, 12, 22, 11]
+random.seed(42)
+array_a_ordenar = [random.randint(1, 1000) for _ in range(1000)]
 print(f"Arreglo original: {array_a_ordenar}\n")
 
 array_ordenado = quicksort(array_a_ordenar)

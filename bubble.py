@@ -1,8 +1,8 @@
 import os
+import random
 os.system('cls')
 
 def bubble_sort(arr):
-    print(f"Arreglo original: {arr}\n")
     n = len(arr)
 
     for i in range(n - 1):
@@ -10,12 +10,15 @@ def bubble_sort(arr):
             
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
-            print(f"Paso: {arr}")
+
     return arr
 
 
 #Ejemplo
-array_a_ordenar = [64, 25, 12, 22, 11]
+random.seed(42)
+array_a_ordenar = [random.randint(1, 1000) for _ in range(1000)]
+print(f"Arreglo original: {array_a_ordenar}\n")
+
 
 array_ordenado = bubble_sort(array_a_ordenar)
 print(f"\nArreglo final: {array_ordenado}")
