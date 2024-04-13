@@ -1,5 +1,7 @@
 import os
 import random
+import time
+
 os.system('cls')
 
 def insertion_sort(arr):
@@ -17,6 +19,8 @@ def insertion_sort(arr):
 
     return arr
 
+tiempo_inicial = time.time()
+
 # Ejemplo de uso:
 random.seed(42)
 array_a_ordenar = [random.randint(1, 1000) for _ in range(1000)]
@@ -24,3 +28,8 @@ print(f"Arreglo original: {array_a_ordenar}\n")
 
 array_ordenado = insertion_sort(array_a_ordenar)
 print(f"\nArreglo final: {array_ordenado}")
+
+tiempo_final = time.time()
+
+tiempo_total = tiempo_final - tiempo_inicial
+print(f"\nTiempo total de ejecución: {tiempo_total} segundos")
